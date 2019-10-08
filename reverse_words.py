@@ -19,8 +19,7 @@ def reverse_words(message):
     except ValueError:
         end_idx =  -1
 
-
-
+    # if theres at least more than one word:
     while end_idx != -1:
         for idx in range(len(message[start_idx:end_idx]) // 2):
             reverse_idx = len(message[start_idx:end_idx]) - 1 - idx
@@ -33,7 +32,7 @@ def reverse_words(message):
         except ValueError:
             end_idx = -1
     
-
+    # this reverses the last word
     for idx in range(len(message[start_idx:]) // 2):
             reverse_idx = len(message[start_idx:]) - 1 - idx
             message[start_idx + idx], message[start_idx + reverse_idx] = message[start_idx + reverse_idx], message[start_idx + idx]
